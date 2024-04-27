@@ -7,18 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		645C12BD2BDC6FE900711D6A /* AppetizerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C12BC2BDC6FE900711D6A /* AppetizerListCell.swift */; };
+		645C12BF2BDC769500711D6A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C12BE2BDC769500711D6A /* NetworkManager.swift */; };
+		645C12C12BDC779300711D6A /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C12C02BDC779300711D6A /* APError.swift */; };
+		645C12C32BDC8F1E00711D6A /* AppetizerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645C12C22BDC8F1E00711D6A /* AppetizerListViewModel.swift */; };
 		649779322BD032FF0017A824 /* AppetizersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649779312BD032FF0017A824 /* AppetizersApp.swift */; };
-		649779342BD032FF0017A824 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649779332BD032FF0017A824 /* ContentView.swift */; };
+		649779342BD032FF0017A824 /* AppetizerTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649779332BD032FF0017A824 /* AppetizerTabView.swift */; };
 		649779362BD033000017A824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649779352BD033000017A824 /* Assets.xcassets */; };
 		649779392BD033000017A824 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 649779382BD033000017A824 /* Preview Assets.xcassets */; };
+		649779402BD033650017A824 /* AppetizersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497793F2BD033650017A824 /* AppetizersListView.swift */; };
+		649779422BD0336D0017A824 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649779412BD0336D0017A824 /* AccountView.swift */; };
+		649779442BD033740017A824 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649779432BD033740017A824 /* OrderView.swift */; };
+		649779472BD03BBF0017A824 /* Appetizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649779462BD03BBF0017A824 /* Appetizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		645C12BC2BDC6FE900711D6A /* AppetizerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListCell.swift; sourceTree = "<group>"; };
+		645C12BE2BDC769500711D6A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		645C12C02BDC779300711D6A /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
+		645C12C22BDC8F1E00711D6A /* AppetizerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerListViewModel.swift; sourceTree = "<group>"; };
 		6497792E2BD032FF0017A824 /* Appetizers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appetizers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		649779312BD032FF0017A824 /* AppetizersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersApp.swift; sourceTree = "<group>"; };
-		649779332BD032FF0017A824 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		649779332BD032FF0017A824 /* AppetizerTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerTabView.swift; sourceTree = "<group>"; };
 		649779352BD033000017A824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		649779382BD033000017A824 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6497793F2BD033650017A824 /* AppetizersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersListView.swift; sourceTree = "<group>"; };
+		649779412BD0336D0017A824 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		649779432BD033740017A824 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		649779452BD03A290017A824 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		649779462BD03BBF0017A824 /* Appetizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appetizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +69,18 @@
 			isa = PBXGroup;
 			children = (
 				649779312BD032FF0017A824 /* AppetizersApp.swift */,
-				649779332BD032FF0017A824 /* ContentView.swift */,
+				649779332BD032FF0017A824 /* AppetizerTabView.swift */,
 				649779352BD033000017A824 /* Assets.xcassets */,
 				649779372BD033000017A824 /* Preview Content */,
+				6497793F2BD033650017A824 /* AppetizersListView.swift */,
+				645C12C22BDC8F1E00711D6A /* AppetizerListViewModel.swift */,
+				649779412BD0336D0017A824 /* AccountView.swift */,
+				649779432BD033740017A824 /* OrderView.swift */,
+				649779452BD03A290017A824 /* Readme.md */,
+				649779462BD03BBF0017A824 /* Appetizer.swift */,
+				645C12BC2BDC6FE900711D6A /* AppetizerListCell.swift */,
+				645C12BE2BDC769500711D6A /* NetworkManager.swift */,
+				645C12C02BDC779300711D6A /* APError.swift */,
 			);
 			path = Appetizers;
 			sourceTree = "<group>";
@@ -137,8 +163,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				649779342BD032FF0017A824 /* ContentView.swift in Sources */,
+				649779472BD03BBF0017A824 /* Appetizer.swift in Sources */,
+				645C12C12BDC779300711D6A /* APError.swift in Sources */,
+				645C12BD2BDC6FE900711D6A /* AppetizerListCell.swift in Sources */,
+				645C12C32BDC8F1E00711D6A /* AppetizerListViewModel.swift in Sources */,
+				649779422BD0336D0017A824 /* AccountView.swift in Sources */,
+				649779342BD032FF0017A824 /* AppetizerTabView.swift in Sources */,
+				645C12BF2BDC769500711D6A /* NetworkManager.swift in Sources */,
 				649779322BD032FF0017A824 /* AppetizersApp.swift in Sources */,
+				649779402BD033650017A824 /* AppetizersListView.swift in Sources */,
+				649779442BD033740017A824 /* OrderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
