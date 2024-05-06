@@ -9,8 +9,7 @@ import SwiftUI
 
 struct AppetizersListView: View {
     @StateObject var viewModel = AppetizerListViewModel()
-    @State private var isShowingDetail = false
-    @State private var selectedAppetizer: Appetizer?
+    
     
     
     var body: some View {
@@ -19,24 +18,52 @@ struct AppetizersListView: View {
                 List(viewModel.appetizers) { appetizer in
                     AppetizerListCell(appetizer: appetizer)
                         .onTapGesture {
-                            isShowingDetail = true
-                            selectedAppetizer = appetizer
+                            viewModel.isShowingDetail = true
+                            viewModel.selectedAppetizer = appetizer
+                        }
+//                        .swipeActions(allowsFullSwipe: false) {
+//                            Button(role: .destructive) {
+//                                print("Delete")
+//                            } label: {
+//                                Label("Delete", systemImage: "trash.circle")
+//                            }
+//                        }
+                    
+                        .swipeActions(allowsFullSwipe: false) {
+                            Button() {
+                                print("Favorite")
+                            } label: {
+                                Label("Favorite", systemImage: "star.circle")
+                            }.tint(.blue)
+                        }
+                    
+                        .swipeActions(edge: .leading) {
+                            Button() {
+                                print("Add to order")
+                            } label: {
+                                Label("Add to Order", systemImage: "fork.knife.circle")
+                            }.tint(.green)
                         }
                 }
                 .navigationTitle("🍦 Appetizers")
-                .disabled(isShowingDetail)
+                .disabled(viewModel.isShowingDetail)
+                .listStyle(.plain)
             }
             .onAppear {
                 viewModel.getAppetizers()
             }
-            .blur(radius: isShowingDetail ? 20 : 0)
-            if isShowingDetail {
-                AppetizerDetailView(appetizer: selectedAppetizer!, isShowingDetail: $isShowingDetail)
+            .blur(radius: viewModel.isShowingDetail ? 20 : 0)
+            .onDisappear{
+                viewModel.isShowingDetail = false
+            }
+            if viewModel.isShowingDetail {
+                AppetizerDetailView(appetizer: viewModel.selectedAppetizer!, isShowingDetail: $viewModel.isShowingDetail)
             }
             
             if viewModel.isLoading {
                 LoadingView()
             }
+            
             
         }
         .alert(item: $viewModel.alertItem) { alertItem in
