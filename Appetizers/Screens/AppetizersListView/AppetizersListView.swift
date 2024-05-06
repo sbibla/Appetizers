@@ -10,7 +10,7 @@ import SwiftUI
 struct AppetizersListView: View {
     @StateObject var viewModel = AppetizerListViewModel()
     
-    
+    @EnvironmentObject var order: Order
     
     var body: some View {
         ZStack {
@@ -40,6 +40,7 @@ struct AppetizersListView: View {
                         .swipeActions(edge: .leading) {
                             Button() {
                                 print("Add to order")
+                                order.add(appetizer)
                             } label: {
                                 Label("Add to Order", systemImage: "fork.knife.circle")
                             }.tint(.green)
