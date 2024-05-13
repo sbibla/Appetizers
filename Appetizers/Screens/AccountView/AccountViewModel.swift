@@ -13,6 +13,7 @@ final class AccountViewModel: ObservableObject {
     @AppStorage("user") private var userData: Data? //Any change will save locally
     @Published var user = User()
     @Published var alertItem: AlertItem?
+
     
     func saveChanges() {
         guard isValidForm else {return}
@@ -29,10 +30,11 @@ final class AccountViewModel: ObservableObject {
     
     
     func retrieveUser() {
-        guard let userData = userData else {return} //First launch, there's no user data
+        guard let userData else {return} //First launch, there's no user data
         
         do {
             user = try JSONDecoder().decode(User.self, from: userData)
+            print("Admin status: \(user.adminUser)")
         } catch {
             alertItem = AlertContext.InvalidUserData
         }

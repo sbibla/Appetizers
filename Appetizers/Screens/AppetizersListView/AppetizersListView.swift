@@ -11,12 +11,13 @@ struct AppetizersListView: View {
     @StateObject var viewModel = AppetizerListViewModel()
     
     @EnvironmentObject var order: Order
-    
+
     var body: some View {
         ZStack {
             NavigationView {
                 List(viewModel.appetizers) { appetizer in
                     AppetizerListCell(appetizer: appetizer)
+                        .listRowSeparator(.hidden)
                         .onTapGesture {
                             viewModel.isShowingDetail = true
                             viewModel.selectedAppetizer = appetizer

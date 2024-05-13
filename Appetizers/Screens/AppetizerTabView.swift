@@ -8,27 +8,41 @@
 import SwiftUI
 
 struct AppetizerTabView: View {
+    
+    @EnvironmentObject var order: Order
+    @EnvironmentObject var userVM: UserViewModel
+    @EnvironmentObject var account: AccountViewModel
+    
     var body: some View {
         TabView {
             AppetizersListView()
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    Label("Home", systemImage: "house.fill")
+                    //                    Image(systemName: "house.fill")
+                    //                    Text("Home")
                 }
             
             AccountView()
                 .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Account")
+                    Label("Account", systemImage: "person.fill")
                 }
             
             OrderView()
-                .tabItem {
-                    Image(systemName: "bag.fill")
-                    Text("Order")
-                }
+                .tabItem {Label("Order", systemImage: "bag")}
+                .badge(order.items.count)
+            if  userVM.user.adminUser {
+                AdminView()
+                    .tabItem {
+                        Label("Admin", systemImage: "shield.fill")
+                    }
+            }
         }
         .accentColor(.BrandPrimary)
+        .onAppear {
+            account.retrieveUser()
+            userVM.user = account.user
+            print("Found user \(account.user.firstName), Admin Status: \(account.user.adminUser)")
+        }
     }
 }
 

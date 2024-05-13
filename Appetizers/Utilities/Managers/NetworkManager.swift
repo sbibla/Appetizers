@@ -11,8 +11,9 @@ import UIKit
 final class NetworkManager {
     static let shared = NetworkManager()
     private let cache = NSCache<NSString, UIImage>()
-    
+//https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers
     static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
+//    static let baseURL = "http://192.168.1.21:1337/" //Local
     private let appetizerURL = baseURL + "appetizers"
     
     private init() {}
@@ -73,7 +74,7 @@ final class NetworkManager {
         }
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { (data, response, error) in
-            guard let data = data, let image = UIImage(data: data) else { //We don't care about the error, since we'll show a placeholder image
+            guard let data, let image = UIImage(data: data) else { //We don't care about the error, since we'll show a placeholder image
                 completed(nil)
                 return
             }
