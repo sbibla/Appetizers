@@ -82,5 +82,6 @@ struct AccountView: View {
 
 #Preview {
     AccountView()
+        .environmentObject(UserViewModel(user: User(firstName: "Saar", lastName: "Bibla", adminUser: true)))
 }
 

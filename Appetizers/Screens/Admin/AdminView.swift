@@ -26,4 +26,5 @@ struct AdminView: View {
 
 #Preview {
     AdminView()
+        .environmentObject(UserViewModel(user: User(firstName: "Saar", lastName: "Bibla", adminUser: true)))
 }

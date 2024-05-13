@@ -12,9 +12,11 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private let cache = NSCache<NSString, UIImage>()
 //https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers
-    static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
-//    static let baseURL = "http://192.168.1.21:1337/" //Local
-    private let appetizerURL = baseURL + "appetizers"
+//    static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/" //remote
+//    private let appetizerURL = baseURL + "appetizers" //remote
+    static let baseURL = "http://192.168.1.21:1337/" //Local
+    private let appetizerURL = baseURL + "menu"
+    
     
     private init() {}
     
