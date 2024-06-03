@@ -12,15 +12,18 @@ struct AdminView: View {
     @EnvironmentObject var userVM: UserViewModel
     
     var body: some View {
-        
-        HStack {
-            Text("Welcome \(userVM.user.firstName),")
-            if userVM.user.adminUser == true {
-                Text("You are an Admin")
-            } else {
-                Text("You are a regular user")
-            }
+        TabView {
+            AnalyticsView()
+                .tabItem {
+                    Label("Analytics", systemImage: "chart.bar.xaxis")
+                }
+            MenuUpdatesView()
+                .tabItem {
+                    Label("Menu", systemImage: "menucard.fill")
+
+                }
         }
+        .accentColor(.BrandPrimary)
     }
 }
 

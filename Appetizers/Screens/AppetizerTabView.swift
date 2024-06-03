@@ -48,4 +48,8 @@ struct AppetizerTabView: View {
 
 #Preview {
     AppetizerTabView()
+        .environmentObject(Order())
+        .environmentObject(AccountViewModel())
+        .environmentObject(UserViewModel(user: User(firstName: "Saar", lastName: "Bibla", adminUser: true)))
+        
 }

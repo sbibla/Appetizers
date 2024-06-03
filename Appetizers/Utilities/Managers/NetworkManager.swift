@@ -12,11 +12,15 @@ final class NetworkManager {
     static let shared = NetworkManager()
     private let cache = NSCache<NSString, UIImage>()
 //https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/appetizers
-//    static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/" //remote
-//    private let appetizerURL = baseURL + "appetizers" //remote
-    static let baseURL = "http://192.168.1.21:1337/" //Local
-    private let appetizerURL = baseURL + "menu"
-    
+//    static let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/" //remote SeanAllen
+//    private let appetizerURL = baseURL + "appetizers" //remote SeanAllen
+//    static let baseURL = "http://192.168.1.21:1337/" //Local
+//    private let appetizerURL = baseURL + "menu"
+    static let baseURL = "https://14do7bo03e.execute-api.us-west-1.amazonaws.com/dev/" //AWS
+        private let appetizerURL = baseURL + "appetizers" //AWS (Lambda)
+//    private let appetizerURL = baseURL + "menu" //AWS (APIGatewayMock)
+//    private let appetizerURL = baseURL + "menu/menuS3" //AWS(S3 file read)
+
     
     private init() {}
     
@@ -50,7 +54,7 @@ final class NetworkManager {
                 let decodedResponse = try decoded.decode(AppetizerResponse.self, from: data)
                 completed(.success(decodedResponse.request))
             } catch {
-                completed(.failure(.invalidData))
+                completed(.failure(.invalidJson))
             }
         }
         
@@ -60,7 +64,7 @@ final class NetworkManager {
     
     func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void ){
         
-        //First check if the image is in the cach
+        //First check if the image is in the cache
         let cacheKey = NSString(string: urlString)
         
         if let image = cache.object(forKey: cacheKey) {

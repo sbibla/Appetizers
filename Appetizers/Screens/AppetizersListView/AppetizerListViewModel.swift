@@ -33,6 +33,8 @@ final class AppetizerListViewModel: ObservableObject {
                         alertItem = AlertContext.invalidResponse
                     case .unableToComplete:
                         alertItem = AlertContext.unableToComplete
+                    case .invalidJson:
+                        alertItem = AlertContext.invalidJson
                     }
                 }
             }
